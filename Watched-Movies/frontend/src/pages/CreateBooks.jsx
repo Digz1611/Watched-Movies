@@ -8,7 +8,7 @@ import { useSnackbar } from 'notistack';
 const CreateBooks = () => {
   const [title, setTitle] = useState('');
   const [director, setDirector] = useState('');
-  const [releaseDate, setPublishYear] = useState('');
+  const [releaseDate, setReleaseDate] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
@@ -64,7 +64,7 @@ const CreateBooks = () => {
           <input
             type='number'
             value={releaseDate}
-            onChange={(e) => setPublishYear(e.target.value)}
+            onChange={(e) => setReleaseDate(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
         </div>
