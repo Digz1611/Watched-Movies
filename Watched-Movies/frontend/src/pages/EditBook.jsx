@@ -7,8 +7,8 @@ import { useSnackbar } from 'notistack';
 
 const EditBook = () => {
   const [title, setTitle] = useState('');
-  const [author, setDirector] = useState('');
-  const [publishYear, setPublishYear] = useState('');
+  const [director, setDirector] = useState('');
+  const [releaseDate, setPublishYear] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const {id} = useParams();
@@ -18,8 +18,8 @@ const EditBook = () => {
     setLoading(true);
     axios.get(`http://localhost:5555/books/${id}`)
     .then((response) => {
-        setDirector(response.data.author);
-        setPublishYear(response.data.publishYear)
+        setDirector(response.data.director);
+        setPublishYear(response.data.releaseDate)
         setTitle(response.data.title)
         setLoading(false);
       }).catch((error) => {
@@ -32,8 +32,8 @@ const EditBook = () => {
   const handleEditBook = () => {
     const data = {
       title,
-      author,
-      publishYear,
+      director,
+      releaseDate,
     };
     setLoading(true);
     axios
@@ -70,7 +70,7 @@ const EditBook = () => {
           <label className='text-xl mr-4 text-gray-500'>Director</label>
           <input
             type='text'
-            value={author}
+            value={director}
             onChange={(e) => setDirector(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
@@ -79,7 +79,7 @@ const EditBook = () => {
           <label className='text-xl mr-4 text-gray-500'>Release Date</label>
           <input
             type='number'
-            value={publishYear}
+            value={releaseDate}
             onChange={(e) => setPublishYear(e.target.value)}
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
