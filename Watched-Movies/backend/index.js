@@ -1,7 +1,7 @@
 import express, { response } from 'express';
 import { PORT, mongoDBURL } from './config.js';
 import mongoose from 'mongoose';
-import booksRoutes from './routes/booksRoute.js';
+import moviesRoutes from './routes/moviesRoute.js';
 import cors from 'cors';
 
 const app = express();
@@ -26,7 +26,7 @@ app.get("/", (request, response) => {
     return response.status(234).send('Welcome to This Thing');
 });
 
-app.use('/books' , booksRoutes);
+app.use('/movies' , moviesRoutes);
 
 mongoose
     .connect(mongoDBURL)
