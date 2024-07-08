@@ -1,0 +1,8 @@
+Change in Table view:
+ - OPTIONAL have a sort by anything in alphabetical order by clicking on one of the table headings
+
+
+change title in index.html when done with the above
+
+
+Do all this then add the login stuff and edit that then after connecting and all that change how everything looks

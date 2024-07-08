@@ -8,16 +8,18 @@ router.post("/", async (request, response) => {
     try {
         if (!request.body.title ||
             !request.body.director ||
-            !request.body.releaseDate
+            !request.body.releaseDate ||
+            !request.body.review
         ) {
             return response.status(400).send({
-                message: 'Send all required fields: title, director, releaseDate',
+                message: 'Send all required fields: title, director, releaseDate, review',
             });
         }
         const newMovie = new Movie({
             title: request.body.title,
             director: request.body.director,
             releaseDate: request.body.releaseDate,
+            review: request.body.review,
         });
 
         const movie = await Movie.create(newMovie);
@@ -66,10 +68,11 @@ router.put('/:id', async (request, response) => {
         if (
             !request.body.title ||
             !request.body.director ||
-            !request.body.releaseDate
+            !request.body.releaseDate ||
+            !request.body.review
         ) {
             return response.status(400).send({
-                message: 'Send all required fields: title, director, releaseDate',
+                message: 'Send all required fields: title, director, releaseDate, review',
             });
         }
 

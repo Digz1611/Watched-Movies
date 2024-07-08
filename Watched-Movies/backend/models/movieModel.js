@@ -14,6 +14,10 @@ const movieSchema = mongoose.Schema(
             type: Number,
             required: true,
         },
+        review: {
+            type: Number,
+            required: true,
+        },
     },
     {
         timestamps: true,

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { PiFilmSlateLight } from 'react-icons/pi';
 import { BiUserCircle, BiShow } from 'react-icons/bi';
+import { CiStar } from "react-icons/ci";
 import { AiOutlineEdit } from 'react-icons/ai';
 import { BsInfoCircle } from 'react-icons/bs';
 import { MdOutlineDelete } from 'react-icons/md';
@@ -16,14 +17,22 @@ const MovieSingleCard = ({ movie }) => {
         {`yr - ${movie.releaseDate}`}
       </h2>
       <h4 className='my-2 text-gray-500'>{movie._id}</h4>
+
       <div className='flex justify-start items-center gap-x-2'>
         <PiFilmSlateLight className='text-red-300 text-2xl' />
         <h2 className='my-1'>{movie.title}</h2>
       </div>
+
       <div className='flex justify-start items-center gap-x-2'>
         <BiUserCircle className='text-red-300 text-2xl' />
         <h2 className='my-1'>{movie.director}</h2>
       </div>
+
+      <div className='flex justify-start items-center gap-x-2'>
+        <CiStar className='text-red-300 text-2xl' />
+        <h2 className='my-1'>{movie.review}</h2>
+      </div>
+
       <div className='flex justify-between items-center gap-x-2 mt-4 p-4'>
         <Link to={`/movies/details/${movie._id}`}>
           <BsInfoCircle className='text-2xl text-green-800 hover:text-black' />
@@ -35,6 +44,7 @@ const MovieSingleCard = ({ movie }) => {
           <MdOutlineDelete className='text-2xl text-red-600 hover:text-black' />
         </Link>
       </div>
+
       {showModal && (
         <MovieModal movie={movie} onClose={() => setShowModal(false)} />
       )}
