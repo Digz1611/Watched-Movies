@@ -1,8 +1,9 @@
-Change in Table view:
- - OPTIONAL have a sort by anything in alphabetical order by clicking on one of the table headings
+Optional:
+ - have a sort by anything in alphabetical order by clicking on one of the table headings
+ - have a drop down to say whether it's a movie or show when creating and show that in the card and table
 
 
 change title in index.html when done with the above
 
 
-Do all this then add the login stuff and edit that then after connecting and all that change how everything looks
+edit login then after connecting and all that change how everything looks
