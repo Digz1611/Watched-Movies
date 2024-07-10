@@ -28,7 +28,6 @@ const Home = () => {
       });
   }, []);
 
-  // Function to navigate to login
   const navigateToLogin = () => {
     history.push('/auth/login');
   };
@@ -52,7 +51,7 @@ const Home = () => {
 
         <button
           className='bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-lg'
-          onClick={navigateToLogin} // Call the navigate function
+          onClick={navigateToLogin}
         >
           Login
         </button>
