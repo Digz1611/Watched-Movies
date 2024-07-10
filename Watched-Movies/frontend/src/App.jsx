@@ -5,6 +5,7 @@ import CreateMovie from './pages/CreateMovies';
 import ShowMovie from './pages/ShowMovie';
 import EditMovie from './pages/EditMovie';
 import DeleteMovie from './pages/DeleteMovie';
+// import LoginApp from './client_login/src/App.js'; 
 
 const App = () => {
   return (
