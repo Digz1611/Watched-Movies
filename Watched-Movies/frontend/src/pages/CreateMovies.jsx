@@ -42,7 +42,7 @@ const CreateMovies = () => {
       <BackButton />
       <h1 className='text-3xl my-4'>Create Movie</h1>
       {loading ? <Spinner /> : ''}
-      <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>
+      <div className='flex flex-col border-2 border-white-400 rounded-xl w-[600px] p-4 mx-auto'>
 
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500'>Title</label>
@@ -80,7 +80,12 @@ const CreateMovies = () => {
             type='number'
             value={review}
             onChange={(e) => {
-              let value = Number(e.target.value);
+              let value = e.target.value;
+              if (value === "") {
+                setReview("");
+                return;
+              }
+              value = Number(value);
               if (value < 1) value = 1;
               if (value > 10) value = 10;
               setReview(value);

@@ -9,12 +9,12 @@ const MoviesTable = ({ movies }) => {
 
       <thead>
         <tr>
-          <th className='border border-slate-600 rounded-md'>No</th>
-          <th className='border border-slate-600 rounded-md'>Title</th>
-          <th className='border border-slate-600 rounded-md max-md:hidden'>Director</th>
-          <th className='border border-slate-600 rounded-md max-md:hidden'>Release Date</th>
-          <th className='border border-slate-600 rounded-md max-md:hidden'>Review</th>
-          <th className='border border-slate-600 rounded-md'>Operations</th>
+          <th className='border border-white-600 rounded-md'>No</th>
+          <th className='border border-white-600 rounded-md'>Title</th>
+          <th className='border border-white-600 rounded-md max-md:hidden'>Director</th>
+          <th className='border border-white-600 rounded-md max-md:hidden'>Release Date</th>
+          <th className='border border-white-600 rounded-md max-md:hidden'>Review</th>
+          <th className='border border-white-600 rounded-md'>Operations</th>
         </tr>
       </thead>
 
@@ -22,36 +22,36 @@ const MoviesTable = ({ movies }) => {
         {movies.map((movie, index) => (
           <tr key={movie._id} className='h-8'>
 
-            <td className='border border-slate-700 rounded-md text-center'>
+            <td className='border border-white-700 rounded-md text-center'>
               {index + 1}
             </td>
 
-            <td className='border border-slate-700 rounded-md text-center'>
+            <td className='border border-white-700 rounded-md text-center'>
               {movie.title}
             </td>
 
-            <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
+            <td className='border border-white-700 rounded-md text-center max-md:hidden'>
               {movie.director}
             </td>
 
-            <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
+            <td className='border border-white-700 rounded-md text-center max-md:hidden'>
               {movie.releaseDate}
             </td>
 
-            <td className='border border-slate-700 rounded-md text-center max-md:hidden'>
+            <td className='border border-white-700 rounded-md text-center max-md:hidden'>
               {movie.review}/10
             </td>
 
-            <td className='border border-slate-700 rounded-md text-center'>
+            <td className='border border-white-700 rounded-md text-center'>
               <div className='flex justify-center gap-x-4'>
                 <Link to={`/movies/details/${movie._id}`}>
-                  <BsInfoCircle className='text-2xl text-green-800' />
+                  <BsInfoCircle className='text-2xl text-green-600' />
                 </Link>
                 <Link to={`/movies/edit/${movie._id}`}>
-                  <AiOutlineEdit className='text-2xl text-yellow-600' />
+                  <AiOutlineEdit className='text-2xl text-yellow-300' />
                 </Link>
                 <Link to={`/movies/delete/${movie._id}`}>
-                  <MdOutlineDelete className='text-2xl text-red-600' />
+                  <MdOutlineDelete className='text-2xl text-red-500' />
                 </Link>
               </div>
             </td>

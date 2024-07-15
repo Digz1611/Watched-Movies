@@ -97,7 +97,12 @@ const EditMovie = () => {
             type='number'
             value={review}
             onChange={(e) => {
-              let value = Number(e.target.value);
+              let value = e.target.value;
+              if (value === "") {
+                setReview("");
+                return;
+              }
+              value = Number(value);
               if (value < 1) value = 1;
               if (value > 10) value = 10;
               setReview(value);
