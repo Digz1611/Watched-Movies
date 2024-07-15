@@ -1,2 +1,0 @@
-<div className='border-2 border-white-500 rounded-lg px-4 py-2 m-4 relative hover:shadow-xl bg-white'>
-<div className='border-2 border-white-500 rounded-lg px-4 py-2 m-4 relative hover:shadow-xl'>

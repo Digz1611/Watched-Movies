@@ -17,7 +17,7 @@ const EditMovie = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:5555/movies/${id}`)
+    axios.get(`http://localhost:4000/movies/${id}`)
       .then((response) => {
         setDirector(response.data.director);
         setReleaseDate(response.data.releaseDate);
@@ -40,7 +40,7 @@ const EditMovie = () => {
     };
     setLoading(true);
     axios
-      .put(`http://localhost:5555/movies/${id}`, data)
+      .put(`http://localhost:4000/movies/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Movie Edited successfully', { variant: 'success' });

@@ -23,7 +23,7 @@ const CreateMovies = () => {
     };
     setLoading(true);
     axios
-      .post('http://localhost:5555/movies', data)
+      .post('http://localhost:4000/movies', data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Movie Created successfully', { variant: 'success' });

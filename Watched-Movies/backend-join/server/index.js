@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 require("dotenv").config();
 const cookieParser = require("cookie-parser");
-const authRoute = require("./Routes/AuthRoute");
+const authRoute = require("../backend/Routes/AuthRoute");
 const { MONGO_URL, PORT, TOKEN_KEY } = process.env;
 
 // Log environment variables to verify

@@ -1,8 +1,10 @@
-const User = require("../../backend/Models/UserModel");
-require("dotenv").config();
-const jwt = require("jsonwebtoken");
+import User from "../Models/UserModel.js";
+import dotenv from "dotenv";
+import jwt from "jsonwebtoken";
 
-module.exports.userVerification = (req, res) => {
+dotenv.config();
+
+export const userVerification = (req, res) => {
   const token = req.cookies.token;
   if (!token) {
     return res.json({ status: false });
