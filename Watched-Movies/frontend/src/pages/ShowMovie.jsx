@@ -12,7 +12,7 @@ const ShowMovie = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:4000/movies/${id}`)
+      .get(`http://localhost:5555/movies/${id}`)
       .then((response) => {
         setMovie(response.data);
         setLoading(false);

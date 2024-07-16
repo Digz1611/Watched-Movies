@@ -15,7 +15,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get('http://localhost:4000/movies')
+      .get('http://localhost:5555/movies')
       .then((response) => {
         setMovies(response.data.data);
         setLoading(false);
