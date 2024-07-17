@@ -137,3 +137,10 @@ span a {
         font-size: 1.5rem;
     }
 }
+
+.error_msg {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
