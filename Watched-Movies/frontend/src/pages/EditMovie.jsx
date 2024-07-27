@@ -48,7 +48,7 @@ const EditMovie = () => {
       })
       .catch((error) => {
         setLoading(false);
-        // alert('An error happened. Please Chack console');
+        console.log('An error happened with editing');
         enqueueSnackbar('Error', { variant: 'error' });
         console.log(error);
       });

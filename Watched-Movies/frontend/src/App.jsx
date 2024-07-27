@@ -1,3 +1,4 @@
+// src/App.jsx
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
@@ -8,11 +9,16 @@ import DeleteMovie from './pages/DeleteMovie';
 import Login from './components/home/Login';
 import Signup from './components/home/Signup';
 
+const ProtectedRoute = ({ children }) => {
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  return isLoggedIn ? children : <Navigate to="/login" />;
+};
+
 const App = () => {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/movies/create' element={<CreateMovies />} />
+      <Route path='/movies/create' element={ <CreateMovies /> } />
       <Route path='/movies/details/:id' element={<ShowMovie />} />
       <Route path='/movies/edit/:id' element={<EditMovie />} />
       <Route path='/movies/delete/:id' element={<DeleteMovie />} />

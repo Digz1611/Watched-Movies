@@ -62,14 +62,14 @@ router.get('/:id', async (request, response) => {
 });
 
 
-// Route for Update a Movie 
+// Route for Update a Movie
 router.put('/:id', async (request, response) => {
     try {
         if (
             !request.body.title ||
             !request.body.director ||
             !request.body.releaseDate ||
-            !request.body.review 
+            !request.body.review
         ) {
             return response.status(400).send({
                 message: 'Send all required fields: title, director, releaseDate',
