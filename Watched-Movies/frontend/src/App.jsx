@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from 'react';
-import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import CreateMovies from './pages/CreateMovies';
 import ShowMovie from './pages/ShowMovie';
@@ -10,13 +10,7 @@ import Login from './components/home/Login';
 import Signup from './components/home/Signup';
 import PrivateRoute from './components/PrivateRoute';
 
-
-
 const App = () => {
-
-
-
-
 
   return (<Router>
     <Routes>
@@ -29,10 +23,6 @@ const App = () => {
         <Route path='/movies/edit/:id' element={<EditMovie />} />
         <Route path='/movies/delete/:id' element={<DeleteMovie />} />
       </Route>
-
-
-
-      {/* Other routes */}
     </Routes>
   </Router>)
 };

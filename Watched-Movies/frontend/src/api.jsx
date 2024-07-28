@@ -1,30 +1,3 @@
-// // src/services/api.js
-// import axios from 'axios';
-
-// const API = axios.create({
-//     baseURL: 'http://localhost:5555',
-// });
-
-// API.interceptors.request.use((req) => {
-//     const token = localStorage.getItem('token');
-//     if (token) {
-//         req.headers.Authorization = `Bearer ${token}`;
-//     }
-//     return req;
-// });
-
-// export const fetchMovies = () => API.get('/movies');
-// export const createMovie = (movieData) => API.post('/movies', movieData);
-// export const getMovie = (id) => API.get(`/movies/${id}`);
-// export const updateMovie = (id, updatedMovie) => API.put(`/movies/${id}`, updatedMovie);
-// export const deleteMovie = (id) => API.delete(`/movies/${id}`);
-
-// export const login = (credentials) => API.post('/login', credentials);
-// export const signup = (userData) => API.post('/signup', userData);
-// export const logout = () => {
-//     localStorage.removeItem('token');
-//     return Promise.resolve();
-// };
 import axios from 'axios';
 
 const API = axios.create({
@@ -39,12 +12,13 @@ API.interceptors.request.use((req) => {
     return req;
 });
 export const fetchMovies = () => {
-    const userId = localStorage.getItem('id'); 
+    const userId = localStorage.getItem('id');
     return API.get(`/movies/user/${userId}`)
 };
 export const createMovie = (movieData) => {
-    const userId = localStorage.getItem('id'); 
-    return API.post('/movies', { ...movieData, userId })};
+    const userId = localStorage.getItem('id');
+    return API.post('/movies', { ...movieData, userId })
+};
 export const getMovie = (id) => API.get(`/movies/${id}`);
 export const updateMovie = (id, updatedMovie) => API.put(`/movies/${id}`, updatedMovie);
 export const deleteMovie = (id) => API.delete(`/movies/${id}`);
