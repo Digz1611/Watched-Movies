@@ -107,6 +107,8 @@ const Login = () => {
       const response = await login(inputValue);
       if (response.data.success) {
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("id" , response.data._id);
+        console.log(response.data);
         navigate("/");
       } else {
         setError(response.data.message);

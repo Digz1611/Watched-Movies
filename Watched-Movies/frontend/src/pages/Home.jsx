@@ -193,9 +193,9 @@ const Home = () => {
             ) : movies.length > 0 ? (
                 showType === 'table' ? (
                     <MoviesTable movies={movies} isLoggedIn={isLoggedIn} />
-                ) : (
+                ) : showType === 'card' && !!isLoggedIn ? (
                     <MoviesCard movies={movies} isLoggedIn={isLoggedIn} />
-                )
+                ) : <p>Please log in</p>
             ) : (
                 <p>No movies found. {isLoggedIn && <Link to="/movies/create">Create one?</Link>}</p>
             )}

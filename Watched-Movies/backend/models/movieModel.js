@@ -18,7 +18,8 @@ const movieSchema = mongoose.Schema(
         review: {
             type: Number,
             required: true,
-        }
+        },
+        userId: mongoose.Schema.Types.ObjectId,
     },
     {
         timestamps: true,

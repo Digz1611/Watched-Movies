@@ -130,11 +130,11 @@ const CreateMovies = () => {
       director,
       releaseDate,
       review,
+
     };
     setLoading(true);
     try {
-      const response = await createMovie(data);
-      console.log('Response:', response.data);
+      await createMovie(data);
       setLoading(false);
       enqueueSnackbar('Movie Created successfully', { variant: 'success' });
       navigate('/');

@@ -38,9 +38,13 @@ API.interceptors.request.use((req) => {
     }
     return req;
 });
-
-export const fetchMovies = () => API.get('/movies');
-export const createMovie = (movieData) => API.post('/movies', movieData);
+export const fetchMovies = () => {
+    const userId = localStorage.getItem('id'); 
+    return API.get(`/movies/user/${userId}`)
+};
+export const createMovie = (movieData) => {
+    const userId = localStorage.getItem('id'); 
+    return API.post('/movies', { ...movieData, userId })};
 export const getMovie = (id) => API.get(`/movies/${id}`);
 export const updateMovie = (id, updatedMovie) => API.put(`/movies/${id}`, updatedMovie);
 export const deleteMovie = (id) => API.delete(`/movies/${id}`);
@@ -49,5 +53,6 @@ export const login = (credentials) => axios.post('http://localhost:4000/login', 
 export const signup = (userData) => axios.post('http://localhost:4000/signup', userData, { withCredentials: true });
 export const logout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('id');
     return Promise.resolve();
 };
