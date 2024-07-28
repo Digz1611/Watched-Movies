@@ -34,7 +34,7 @@ router.post("/", async (request, response) => {
 // Route for Get All Movies from database
 router.get('/user/:userId', async (request, response) => {
     try {
-        const movies = await Movie.find({userId: request.params.userId});
+        const movies = await Movie.find({ userId: request.params.userId });
 
         return response.status(200).json({
             count: movies.length,
