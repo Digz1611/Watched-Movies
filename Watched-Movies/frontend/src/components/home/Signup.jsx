@@ -37,6 +37,7 @@ const Signup = () => {
   };
 
   return (
+    <div className="login_container">
     <div className="form_container">
       <h2>Signup Account</h2>
       <form onSubmit={handleSubmit}>
@@ -76,6 +77,7 @@ const Signup = () => {
           Already have an account? <Link to={"/login"}>Login</Link>
         </span>
       </form>
+    </div>
     </div>
   );
 };

@@ -39,7 +39,8 @@ const Login = () => {
   };
 
   return (
-    <div className="form_container">
+    <div className="login_container">
+    <div className="auth_container">
       <h2>Login Account</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -64,10 +65,13 @@ const Login = () => {
         </div>
         {error && <div className="error_msg">{error}</div>}
         <button type="submit">Submit</button>
+        <br />
+        <br />
         <span>
           Don't have an account? <Link to={"/signup"}>Signup</Link>
         </span>
       </form>
+    </div>
     </div>
   );
 };
